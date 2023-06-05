@@ -58,3 +58,4 @@ class Rectangle:
             if i is not max(range(self.height)):
                 new_string = new_string + '\n'
         return new_string
+
