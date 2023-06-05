@@ -11,8 +11,8 @@ class Rectangle:
     Returns specs
     """
     def __init__(self, width=0, height=0):
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
@@ -22,7 +22,7 @@ class Rectangle:
     def width(self, value):
         if isinstance(value, int) is not True:
             raise TypeError("width must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
