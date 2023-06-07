@@ -1,23 +1,23 @@
 #!/usr/bin/python3
-"""
-This function prints a square of hashes
-Returns:
-Hash
-"""
+# 4-print_square.py
+"""Defines a square-printing function."""
 
 
 def print_square(size):
-    """Prints a square of hashes
-    Returns hashes
+    """Print a square with the # character.
+
+    Args:
+        size (int): The height/width of the square.
+    Raises:
+        TypeError: If size is not an integer.
+        ValueError: If size is < 0
     """
-    if isinstance(size, float) and size < 0:
+    if not isinstance(size, int):
         raise TypeError("size must be an integer")
-    elif isinstance(size, int) is not True:
-        raise TypeError("size must be an integer")
-    elif size < 0:
-            raise ValueError("size must be >= 0")
-    else:
-        for i in range(size):
-            for j in range(size):
-                print('#', end='')
-            print()
+    if size < 0:
+        raise ValueError("size must be >= 0")
+
+    for i in range(size):
+        [print("#", end="") for j in range(size)]
+        print("")
+
