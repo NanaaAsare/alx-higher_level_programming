@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''11-student.py module'''
+'''10-student.py module'''
 
 
 class Student:
@@ -20,25 +20,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """
-        Get a dictionary representation of the Student.
-        If attrs is a list of strings, only attributes name
-        contain in this list must be retrieved. Otherwise, all
-        attributes must be retrieved
-
-        Args:
-            attrs (list): (Optional) The attributes to represent.
-        """
         if (type(attrs) == list and
                 all(type(ele) == str for ele in attrs)):
             return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         return self.__dict__
-
-    def reload_from_json(self, json):
-        """Replace all attributes of the Student.
-
-        Args:
-            json (dict): The key/value pairs to replace attributes with.
-        """
-        for k, v in json.items():
-            setattr(self, k, v)

@@ -1,1 +1,2 @@
-In this project, I used the builtin with, open, and read functions with the json module to read and write files and serialize and deserialize objects with JSON.
+This directory contains all solution files to the project python input/output.
+from read file to save from json, append write and excetera.
